@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2794d52d-1718-4201-8509-a917275a7d7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CalculatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Monomial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Polynomial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HelloFX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Monomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Monomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CalculatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CalculatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Monomial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Monomial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Polynomial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Polynomial.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/SceneBuilder/SceneBuilder.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

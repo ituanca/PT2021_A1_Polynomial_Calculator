@@ -19,7 +19,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="141.0" text="Result:">
+      <Label id="labelResult" fx:id="labelResult" layoutX="56.0" layoutY="141.0" text="Result:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -27,27 +27,27 @@
       <TextField id="tfFirstPolynomial" fx:id="tfFirstPolynomial" layoutX="146.0" layoutY="64.0" prefHeight="25.0" prefWidth="197.0" />
       <TextField id="tfSecondPolynomial" fx:id="tfSecondPolynomial" layoutX="146.0" layoutY="101.0" prefHeight="25.0" prefWidth="197.0" />
       <TextField id="tfResult" fx:id="tfResult" layoutX="146.0" layoutY="137.0" prefHeight="25.0" prefWidth="197.0" />
-      <Button id="btnAddition" fx:id="btnAddition" layoutX="52.0" layoutY="192.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Addition(+)">
+      <Button id="btnAddition" fx:id="btnAddition" layoutX="52.0" layoutY="192.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Addition(+)" onAction="#executeAddition">
          <effect>
             <InnerShadow />
          </effect></Button>
-      <Button id="btnSubtraction" fx:id="btnSubtraction" layoutX="209.0" layoutY="192.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Subtraction(-)">
+      <Button id="btnSubtraction" fx:id="btnSubtraction" layoutX="209.0" layoutY="192.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Subtraction(-)" onAction="#executeSubtraction">
          <effect>
             <InnerShadow />
          </effect></Button>
-      <Button id="btnMultiplication" fx:id="btnMultiplication" layoutX="52.0" layoutY="270.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Multiplication(*)">
+      <Button id="btnMultiplication" fx:id="btnMultiplication" layoutX="52.0" layoutY="270.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Multiplication(*)" onAction="#executeMultiplication">
          <effect>
             <InnerShadow />
          </effect></Button>
-      <Button id="btnDivision" fx:id="btnDivision" layoutX="209.0" layoutY="270.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Division(/)">
+      <Button id="btnDivision" fx:id="btnDivision" layoutX="209.0" layoutY="270.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Division(/)" onAction="#executeDivision">
          <effect>
             <InnerShadow />
          </effect></Button>
-      <Button id="btnDerivative" fx:id="btnDerivative" layoutX="52.0" layoutY="348.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Derivation(')">
+      <Button id="btnDerivation" fx:id="btnDerivation" layoutX="52.0" layoutY="348.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Derivation(')" onAction="#executeDerivation">
          <effect>
             <InnerShadow />
          </effect></Button>
-      <Button id="btnAdIntegrate" fx:id="btnIntegrate" layoutX="209.0" layoutY="348.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Integration">
+      <Button id="btnAdIntegration" fx:id="btnIntegration" layoutX="209.0" layoutY="348.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="138.0" text="Integration" onAction="#executeIntegration">
          <effect>
             <InnerShadow />
          </effect></Button>
