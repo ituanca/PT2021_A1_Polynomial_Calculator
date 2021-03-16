@@ -41,54 +41,90 @@ public class CalculatorController {
     @FXML
     private void executeAddition(ActionEvent actionEvent) {
         actionEvent.consume();
+        reset();
         managePolynomials();
-        ArrayList<Monomial> result = new ArrayList<Monomial>();
-        String stringResult = "";
+        ArrayList<Monomial> result = new ArrayList<>();
+        String stringResult;
         Addition addition = new Addition();
         addition.performOperation(monomialsList1, monomialsList2, result);
         sortMonomialsList(result);
         stringResult = convertResultIntoString(result);
+        tfResult.setText(stringResult);
         System.out.println(stringResult);
     }
 
     public void executeSubtraction(ActionEvent actionEvent) {
         actionEvent.consume();
+        reset();
         managePolynomials();
-        ArrayList<Monomial> result = new ArrayList<Monomial>();
-        String stringResult = "";
+        ArrayList<Monomial> result = new ArrayList<>();
+        String stringResult;
         Subtraction subtraction = new Subtraction();
         subtraction.performOperation(monomialsList1, monomialsList2, result);
         sortMonomialsList(result);
         stringResult = convertResultIntoString(result);
+        tfResult.setText(stringResult);
         System.out.println(stringResult);
     }
 
     public void executeMultiplication(ActionEvent actionEvent) {
         actionEvent.consume();
+        reset();
         managePolynomials();
-        ArrayList<Monomial> result = new ArrayList<Monomial>();
-        String stringResult = "";
+        ArrayList<Monomial> result = new ArrayList<>();
+        String stringResult;
         Multiplication multiplication = new Multiplication();
         multiplication.performOperation(monomialsList1, monomialsList2, result);
         sortMonomialsList(result);
-        managePolynomial(result);
+        addTermsHavingTheSameExponent(result);
         stringResult = convertResultIntoString(result);
+        tfResult.setText(stringResult);
         System.out.println(stringResult);
     }
 
     public void executeDivision(ActionEvent actionEvent) {
         actionEvent.consume();
+        reset();
         managePolynomials();
+        ArrayList<Monomial> result = new ArrayList<>();
+        String stringResult;
+        Division division = new Division();
+        sortMonomialsList(monomialsList1);
+        sortMonomialsList(monomialsList2);
+        division.performOperation(monomialsList1, monomialsList2, result);
+        stringResult = convertResultIntoString(result);
+        tfResult.setText(stringResult);
+        System.out.println(stringResult);
     }
 
     public void executeDerivation(ActionEvent actionEvent) {
         actionEvent.consume();
-        managePolynomials();
+        reset();
+        tfSecondPolynomial.setText("");
+        managePolynomial();
+        ArrayList<Monomial> result = new ArrayList<>();
+        String stringResult;
+        Derivation derivation = new Derivation();
+        derivation.performOperation(monomialsList1, result);
+        sortMonomialsList(result);
+        stringResult = convertResultIntoString(result);
+        tfResult.setText(stringResult);
+        System.out.println(stringResult);
     }
 
     public void executeIntegration(ActionEvent actionEvent) {
         actionEvent.consume();
-        managePolynomials();
+        reset();
+        tfSecondPolynomial.setText("");
+        managePolynomial();
+        ArrayList<Monomial> result = new ArrayList<>();
+        String stringResult;
+        Integration integration = new Integration();
+        integration.performOperation(monomialsList1, result);
+        sortMonomialsList(result);
+        stringResult = convertResultIntoString(result);
+        tfResult.setText(stringResult);
+        System.out.println(stringResult);
     }
 
     public String getFirstPolynomial(){
@@ -167,19 +203,16 @@ public class CalculatorController {
         return monomial;
     }
 
-    private static void managePolynomial(ArrayList<Monomial> monomialsList){
+    private static void addTermsHavingTheSameExponent(ArrayList<Monomial> monomialsList){
         for(int i = 0; i < monomialsList.size(); i++){
             for(int j = i + 1; j < monomialsList.size(); j++){
                 if(monomialsList.get(i).getPower() == monomialsList.get(j).getPower()){
-                    int newCoefficient = monomialsList.get(i).getCoefficient() + monomialsList.get(j).getCoefficient();
+                    int newCoefficient = (int) (monomialsList.get(i).getCoefficient() + monomialsList.get(j).getCoefficient());
                     monomialsList.get(i).setCoefficient(newCoefficient);
                     monomialsList.remove(monomialsList.get(j));
                     j = j - 1;
                 }
             }
-        }
-        for(Monomial monomial : monomialsList){
-            System.out.println(monomial.createStringFromMonomial());
         }
     }
 
@@ -188,11 +221,19 @@ public class CalculatorController {
 
         String firstStringPolynomial = getFirstPolynomial();
         firstPolynomial.createMonomialsList(firstStringPolynomial, stringMonomials1, monomialsList1);
-        managePolynomial(monomialsList1);
+        addTermsHavingTheSameExponent(monomialsList1);
 
         String secondStringPolynomial = getSecondPolynomial();
         secondPolynomial.createMonomialsList(secondStringPolynomial, stringMonomials2, monomialsList2);
-        managePolynomial(monomialsList2);
+        addTermsHavingTheSameExponent(monomialsList2);
+    }
+
+    public void managePolynomial(){
+        validateInputUnaryOperation();
+
+        String  stringPolynomial = getFirstPolynomial();
+        firstPolynomial.createMonomialsList(stringPolynomial, stringMonomials1, monomialsList1);
+        addTermsHavingTheSameExponent(monomialsList1);
     }
 
     public void sortMonomialsList(ArrayList<Monomial> monomialsList){
@@ -204,6 +245,18 @@ public class CalculatorController {
         for(Monomial monomial : Reversed.reversed(monomialsList)){
            result = result.concat(monomial.createStringFromMonomial());
         }
+        if(result.length() > 0 && result.charAt(0)=='+'){
+            return result.substring(1);
+        }
         return result;
+    }
+
+    public void reset(){
+         stringMonomials1 = new ArrayList<>();
+         monomialsList1 = new ArrayList<>();
+         firstPolynomial = new Polynomial(monomialsList1);
+         stringMonomials2 = new ArrayList<>();
+         monomialsList2 = new ArrayList<>();
+         secondPolynomial = new Polynomial(monomialsList2);
     }
 }

@@ -2,17 +2,22 @@ package model;
 
 import java.util.ArrayList;
 
-public class Addition implements Operation{
+public class Addition implements BinaryOperation {
 
     @Override
     public void performOperation(ArrayList<Monomial> monomialsListFirstPolynomial, ArrayList<Monomial> monomialsListSecondPolynomial, ArrayList<Monomial> monomialsListResult) {
+        ArrayList<Integer> powersToBeIgnored = new ArrayList<>();
         for(int i = 0; i < monomialsListFirstPolynomial.size(); i++){
             boolean found = false;
             for(int j = 0; j < monomialsListSecondPolynomial.size(); j++){
                 if(monomialsListFirstPolynomial.get(i).getPower() == monomialsListSecondPolynomial.get(j).getPower()){
-                    int monomialCoefficientResult = monomialsListFirstPolynomial.get(i).getCoefficient() + monomialsListSecondPolynomial.get(j).getCoefficient();
-                    Monomial monomial = new Monomial(monomialCoefficientResult, monomialsListFirstPolynomial.get(i).getPower());
-                    monomialsListResult.add(monomial);
+                    int monomialCoefficientResult = (int) (monomialsListFirstPolynomial.get(i).getCoefficient() + monomialsListSecondPolynomial.get(j).getCoefficient());
+                    if (monomialCoefficientResult == 0) {
+                       powersToBeIgnored.add(monomialsListFirstPolynomial.get(i).getPower());
+                    }else{
+                        Monomial monomial = new Monomial(monomialCoefficientResult, monomialsListFirstPolynomial.get(i).getPower());
+                        monomialsListResult.add(monomial);
+                    }
                     found = true;
                 }
             }
@@ -22,13 +27,15 @@ public class Addition implements Operation{
         }
         for(Monomial monomial : monomialsListSecondPolynomial){
             boolean found = false;
-            for(Monomial monomialResult : monomialsListResult){
-                if(monomial.getPower() == monomialResult.getPower()){
-                    found = true;
+            if(!powersToBeIgnored.contains(monomial.getPower())){
+                for(Monomial monomialResult : monomialsListResult){
+                    if(monomial.getPower() == monomialResult.getPower()){
+                        found = true;
+                    }
                 }
-            }
-            if(!found){
-                monomialsListResult.add(monomial);
+                if(!found){
+                    monomialsListResult.add(monomial);
+                }
             }
         }
     }

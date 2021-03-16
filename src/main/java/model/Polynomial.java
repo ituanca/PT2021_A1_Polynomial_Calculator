@@ -18,10 +18,6 @@ public class Polynomial {
         Monomials = monomials;
     }
 
-//    public void getMonomialsStringList(String polynomial, ArrayList<String> stringMonomials){
-//        CalculatorController.separateInputIntoMonomialsString(polynomial, stringMonomials);
-//    }
-
     public void createMonomialsList(String stringPolynomial, ArrayList<String> stringMonomials, ArrayList<Monomial> monomialsList){
         CalculatorController.separateInputIntoMonomialsString(stringPolynomial, stringMonomials);
         for (String stringMonomial: stringMonomials) {
