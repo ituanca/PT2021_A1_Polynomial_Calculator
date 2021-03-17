@@ -7,26 +7,26 @@ import java.util.ArrayList;
 public class Division implements BinaryOperation{
 
     @Override
-    public void performOperation(ArrayList<Monomial> monomialsListDivident, ArrayList<Monomial> monomialsListDivisor, ArrayList<Monomial> monomialsListResult) {
+    public void performOperation(ArrayList<Monomial> monomialsListDividend, ArrayList<Monomial> monomialsListDivisor, ArrayList<Monomial> monomialsListResult) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         if( monomialsListDivisor.get(0).getPower() == 0 && monomialsListDivisor.get(0).getCoefficient() == 0 ){
             alert.setContentText("Division by zero polynomial");
             alert.show();
             throw new RuntimeException("Division by zero polynomial!");
         }
-        if(monomialsListDivident.get(0).getPower() < monomialsListDivisor.get(0).getPower()){
+        if(monomialsListDividend.get(0).getPower() < monomialsListDivisor.get(0).getPower()){
             alert.setContentText("Divident has smaller degree than the divisor!");
             alert.show();
            throw new RuntimeException("Division by zero polynomial");
         }
-        double coefficient = monomialsListDivident.get(0).getCoefficient() / monomialsListDivisor.get(0).getCoefficient();
-        int power = monomialsListDivident.get(0).getPower() - monomialsListDivisor.get(0).getPower();
+        double coefficient = monomialsListDividend.get(0).getCoefficient() / monomialsListDivisor.get(0).getCoefficient();
+        int power = monomialsListDividend.get(0).getPower() - monomialsListDivisor.get(0).getPower();
        /* ArrayList<Monomial> monomialsListResult = new ArrayList<>();
         int i = 1;
-        Monomial divident = monomialsListDivident.get(i);
+        Monomial divident = monomialsListDividend.get(i);
         while(){
             Monomial monomial = new Monomial();
-            dividePolynomials(monomial, divident, monomialsListDivisor.get(1), monomialsListResult, monomialsListDivisor, monomialsListDivident);
+            dividePolynomials(monomial, divident, monomialsListDivisor.get(1), monomialsListResult, monomialsListDivisor, monomialsListDividend);
             i++;
 
             Multiplication multiplication = new Multiplication();

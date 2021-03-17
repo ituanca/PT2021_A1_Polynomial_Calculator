@@ -39,7 +39,7 @@ public class CalculatorController {
     }
 
     @FXML
-    private void executeAddition(ActionEvent actionEvent) {
+    private void performAddition(ActionEvent actionEvent) {
         actionEvent.consume();
         reset();
         managePolynomials();
@@ -50,10 +50,9 @@ public class CalculatorController {
         sortMonomialsList(result);
         stringResult = convertResultIntoString(result);
         tfResult.setText(stringResult);
-        System.out.println(stringResult);
     }
 
-    public void executeSubtraction(ActionEvent actionEvent) {
+    public void performSubtraction(ActionEvent actionEvent) {
         actionEvent.consume();
         reset();
         managePolynomials();
@@ -64,10 +63,9 @@ public class CalculatorController {
         sortMonomialsList(result);
         stringResult = convertResultIntoString(result);
         tfResult.setText(stringResult);
-        System.out.println(stringResult);
     }
 
-    public void executeMultiplication(ActionEvent actionEvent) {
+    public void performMultiplication(ActionEvent actionEvent) {
         actionEvent.consume();
         reset();
         managePolynomials();
@@ -79,10 +77,9 @@ public class CalculatorController {
         addTermsHavingTheSameExponent(result);
         stringResult = convertResultIntoString(result);
         tfResult.setText(stringResult);
-        System.out.println(stringResult);
     }
 
-    public void executeDivision(ActionEvent actionEvent) {
+    public void performDivision(ActionEvent actionEvent) {
         actionEvent.consume();
         reset();
         managePolynomials();
@@ -94,10 +91,9 @@ public class CalculatorController {
         division.performOperation(monomialsList1, monomialsList2, result);
         stringResult = convertResultIntoString(result);
         tfResult.setText(stringResult);
-        System.out.println(stringResult);
     }
 
-    public void executeDerivation(ActionEvent actionEvent) {
+    public void performDerivation(ActionEvent actionEvent) {
         actionEvent.consume();
         reset();
         tfSecondPolynomial.setText("");
@@ -109,10 +105,9 @@ public class CalculatorController {
         sortMonomialsList(result);
         stringResult = convertResultIntoString(result);
         tfResult.setText(stringResult);
-        System.out.println(stringResult);
     }
 
-    public void executeIntegration(ActionEvent actionEvent) {
+    public void performIntegration(ActionEvent actionEvent) {
         actionEvent.consume();
         reset();
         tfSecondPolynomial.setText("");
@@ -124,7 +119,6 @@ public class CalculatorController {
         sortMonomialsList(result);
         stringResult = convertResultIntoString(result);
         tfResult.setText(stringResult);
-        System.out.println(stringResult);
     }
 
     public String getFirstPolynomial(){
@@ -156,12 +150,6 @@ public class CalculatorController {
     }
 
     public static void separateInputIntoMonomialsString(String stringPolynomial, ArrayList<String> stringMonomials){
-//        String delimiters = "[+ ]+";
-//        stringPolynomial = stringPolynomial.replace("-", "+-");
-//        String[] tokens = stringPolynomial.split(delimiters);
-//
-//        stringMonomials.addAll(Arrays.asList(tokens));
-
         Pattern patternPolynomial = Pattern.compile("([+-]?[^-+]+)");
         Matcher matcherPolynomial = patternPolynomial.matcher(stringPolynomial);
         while (matcherPolynomial.find()) {
@@ -199,7 +187,6 @@ public class CalculatorController {
         }
         monomial.setCoefficient(Integer.parseInt(stringCoefficient));
         monomial.setPower(Integer.parseInt(stringPower));
-        System.out.println(monomial.getCoefficient() + " " + monomial.getPower());
         return monomial;
     }
 
