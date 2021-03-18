@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2794d52d-1718-4201-8509-a917275a7d7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/CalculatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CalculatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 1 - Polynomial Calculator.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 1 - Polynomial Calculator.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Integration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Integration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Monomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Monomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Subtraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Subtraction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

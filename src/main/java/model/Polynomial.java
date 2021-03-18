@@ -25,5 +25,4 @@ public class Polynomial {
           monomialsList.add(monomial);
         }
     }
-
 }

@@ -40,5 +40,4 @@ public class Subtraction implements BinaryOperation {
             }
         }
     }
-
 }
